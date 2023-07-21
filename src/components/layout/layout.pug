@@ -1,0 +1,19 @@
+include ../header/header
+include ../footer/footer
+
+doctype html
+html
+  head
+    meta(charset='utf-8')
+
+    block head
+    title= pageTitle || ''
+
+    link(href=require('../../styles/main.scss') rel='stylesheet')
+  body
+    .root
+      +header()
+      main.main
+        block content
+      +footer()
+    script(src=require('../../scripts/main.ts') defer='defer')

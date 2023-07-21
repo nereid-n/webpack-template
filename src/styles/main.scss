@@ -1,0 +1,17 @@
+@import 'imports';
+
+body {
+    margin: 0;
+}
+  
+.root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.2;
+}
+  
+.main {
+    flex-grow: 1;
+}
