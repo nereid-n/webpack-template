@@ -3,9 +3,9 @@ const PugPlugin = require('pug-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
-module.exports = {
+let config = {
 	output: {
-		path: path.join(__dirname, 'public/'),
+		path: path.join(__dirname, 'dist/'),
 	},
 	
 	entry: {
@@ -14,6 +14,7 @@ module.exports = {
 
 	plugins: [
 		new PugPlugin({
+			pretty: true,
 			js: {
 				filename: 'assets/js/[name].[contenthash:8].js',
 			},
@@ -24,7 +25,7 @@ module.exports = {
 		new BrowserSyncPlugin({
       		host: 'localhost',
     		port: 3000,
-    		server: { baseDir: ['public'] }
+    		server: { baseDir: ['dist'] }
     	}),
 		new ESLintPlugin({
 			extensions: ['.tsx', '.ts', '.js'],
@@ -51,14 +52,14 @@ module.exports = {
     			test: /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i,
     			type: 'asset/resource',
     			generator: {
-        			filename: 'img/[hash][ext][query]'
+        			filename: 'assets/img/[hash][ext][query]'
 				}
     		},
     		{
     			test: /\.(ttf|otf|woff|eot)$/i,
     			type: 'asset/resource',
     			generator: {
-        			filename: 'fonts/[hash][ext][query]'
+        			filename: 'assets/fonts/[hash][ext][query]'
 				}
     		}
 		],
@@ -68,4 +69,12 @@ module.exports = {
 		extensions: ['.ts', '.js']
 	},
 	watch: true
+};
+
+module.exports = (env, argv) => {
+	if (argv.mode === 'production') {
+	  config.watch = false;
+	  config.output.path = path.join(__dirname, 'build/');
+	}
+	return config;
 };

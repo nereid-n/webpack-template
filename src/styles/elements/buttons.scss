@@ -1,0 +1,16 @@
+.btn {
+    color: $white;
+    padding: 10px 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+    background: $black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+        background: lighten($black, 50%);
+    }
+    &:active {
+        background: lighten($black, 30%);
+    }
+}

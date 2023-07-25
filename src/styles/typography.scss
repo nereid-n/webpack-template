@@ -1,0 +1,30 @@
+$fw: ('thin', 'extra-light', 'light', 'regular', 'medium', 'semi-bold', 'bold', 'extra-bold', 'black');
+
+$i: 0;
+
+@each $fw-item in $fw {
+  $i: $i + 100;
+  .fw-#{$fw-item} {
+    font-weight: #{$i};
+  }
+}
+
+@for $i from 7 through 18 {
+  .fz#{$i} {
+    font-size: #{$i}px;
+  }
+}
+
+$align: ('left', 'center', 'right', 'justify');
+
+@each $align-item in $align {
+  .text-#{$align-item} {
+    text-align: #{$align-item};
+  }
+}
+
+@each $name, $color in $colors {
+  .c-#{$name} {
+    color: #{$color};
+  }
+}

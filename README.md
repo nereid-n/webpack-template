@@ -20,6 +20,12 @@ Start the server
   npm run dev
 ```
 
+Build the project
+
+```bash
+  npm run build
+```
+
 Create new page
 
 ```bash
