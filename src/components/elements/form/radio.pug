@@ -1,0 +1,9 @@
+mixin radio(options, className= 'input-wrap')
+    div(class= className)
+        for item in options.list
+            label.radio-label
+                if item.checked
+                    input.radio(type='radio' name=options.name value= item.value checked)
+                else
+                    input.radio(type='radio' name=options.name value= item.value) 
+                .radio-text= item.text

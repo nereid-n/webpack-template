@@ -1,0 +1,9 @@
+mixin checkbox(options, className= 'input-wrap')
+    div(class= className)
+        for item in options.list
+            label.checkbox-label
+                if item.checked
+                    input.checkbox(type='checkbox' name=options.name value= item.value checked)
+                else
+                    input.checkbox(type='checkbox' name=options.name value= item.value)
+                .checkbox-text= item.text

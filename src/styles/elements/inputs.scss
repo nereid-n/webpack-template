@@ -1,0 +1,84 @@
+$borderColor: #ccc;
+
+.label {
+    display: block;
+    margin-bottom: 7px;
+}
+
+.input, .textarea, .select {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid $borderColor;
+    &:focus {
+        border-color: $black;
+    }
+}
+
+.textarea {
+    min-height: 100px;
+    resize: none;
+}
+
+$arrowWidth: 20px;
+$arrowRight: 10px;
+
+.select {
+    padding-right: $arrowWidth + $arrowRight * 2;
+    appearance: none;
+    &-wrap {
+        position: relative;
+    }
+    &-arrow {
+        position: absolute;
+        top: 50%;
+        right: $arrowRight;
+        width: $arrowWidth;
+        transform: translateY(-50%);
+    }
+}
+
+.input-wrap {
+    margin-bottom: 20px;
+}
+
+.checkbox, .radio {
+    position: relative;
+    appearance: none;
+    @include square(24px);
+    margin: 0;
+    border: 1px solid $borderColor;
+    border-radius: 4px;
+    &-label {
+        display: flex;
+        margin-bottom: 10px;
+    }
+    &-text {
+        margin: 1px 0 0 10px;
+    }
+    &:after {
+        content: '';
+        @include centerAbsolute;
+        @include square(20px);
+        background-image: url('Images/check-svgrepo-com.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        opacity: 0;
+        transition: $transition;
+    }
+    &:checked:after {
+        opacity: 1;
+    }
+}
+
+.radio {
+    border-radius: 50%;
+    &:after {
+        @include centerAbsolute;
+        @include square(14px);
+        background-color: $black;
+        background-image: none;
+        border-radius: 50%;
+    }
+}

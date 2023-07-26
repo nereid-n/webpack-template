@@ -1,0 +1,4 @@
+mixin textarea(label, value, className='input-wrap')
+    div(class= className)
+        label.label(for= attributes.id)= label
+        textarea.textarea&attributes(attributes)= value

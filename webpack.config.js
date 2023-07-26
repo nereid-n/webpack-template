@@ -49,7 +49,7 @@ let config = {
 				exclude: /(node_modules)/
 			},
 			{
-    			test: /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i,
+    			test: /\.(gif|jpe?g|tiff?|png|webp|bmp|svg)$/i,
     			type: 'asset/resource',
     			generator: {
         			filename: 'assets/img/[hash][ext][query]'
@@ -66,7 +66,10 @@ let config = {
 	},
 	
 	resolve: {
-		extensions: ['.ts', '.js']
+		extensions: ['.ts', '.js'],
+		alias: {
+			Images: path.join(__dirname, 'src/img/'),
+		},
 	},
 	watch: true
 };

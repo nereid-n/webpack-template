@@ -1,0 +1,11 @@
+mixin select(label, options, className= 'input-wrap')
+    div(class= className)
+        label.label(for= attributes.id)= label
+        .select-wrap
+            select.select&attributes(attributes)
+                each option in options
+                    if option.selected
+                        option(value= option.value selected)= option.text
+                    else
+                        option(value= option.value)= option.text       
+            img.select-arrow(src=require('Images/arrow-down-svgrepo-com.svg'))          

@@ -1,5 +1,6 @@
 @import 'fonts.scss';
 @import 'vars';
+@import 'mixin';
 @import 'imports';
 @import 'typography';
 @import 'elements/container';
@@ -12,8 +13,8 @@ body {
     margin: 0;
     color: $black;
     font-family: $roboto;
-    font-size: 14px;
-    line-height: 1.2;
+    font-size: 16px;
+    line-height: 1.5;
     background-color: $white;
 }
   
@@ -44,9 +45,15 @@ svg {
 }
   
 * {
+    box-sizing: border-box;
     &:focus {
         outline: none !important
     }
+}
+
+input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
 }
   
 button {

@@ -1,0 +1,4 @@
+mixin input(label, className= 'input-wrap')
+    div(class= className)
+        label.label(for= attributes.id)= label
+        input.input&attributes(attributes)
