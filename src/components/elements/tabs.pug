@@ -1,0 +1,12 @@
+mixin tabs(list)
+    .tabs-container
+        .tabs
+            each item, index in list
+                -const active = index == 0 ? 'active' : ''
+                .tabs-title(class= active)= item.title
+        if block
+            block
+        else
+            each item, index in list
+                - const active = index == 0 ? 'active' : ''
+                .tabs-content(class= active)= item.content

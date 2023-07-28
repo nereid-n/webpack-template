@@ -1,3 +1,5 @@
+// font-weight
+
 $fw: ('thin', 'extra-light', 'light', 'regular', 'medium', 'semi-bold', 'bold', 'extra-bold', 'black');
 
 $i: 0;
@@ -9,11 +11,15 @@ $i: 0;
   }
 }
 
+//font-size
+
 @for $i from 7 through 18 {
   .fz#{$i} {
     font-size: #{$i}px;
   }
 }
+
+//text-align
 
 $align: ('left', 'center', 'right', 'justify');
 
@@ -22,6 +28,8 @@ $align: ('left', 'center', 'right', 'justify');
     text-align: #{$align-item};
   }
 }
+
+//color
 
 @each $name, $color in $colors {
   .c-#{$name} {

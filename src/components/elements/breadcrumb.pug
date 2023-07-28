@@ -1,0 +1,8 @@
+mixin breadcrumb(list)
+    ul.breadcrumb-container
+        each item, index in list
+            if index == list.length - 1
+                li.breadcrumb.active= item.title
+            else
+                li.breadcrumb
+                    a(href= item.link)= item.title

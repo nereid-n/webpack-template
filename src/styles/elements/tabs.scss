@@ -1,0 +1,18 @@
+.tabs {
+    display: flex;
+    &-title {
+        padding: 5px 10px;
+        background: #ccc;
+        cursor: pointer;
+        &.active {
+            background: $white;
+        }
+    }
+    &-content {
+        display: none;
+        padding: 10px;
+        &.active {
+            display: block;
+        }
+    }
+}
