@@ -1,0 +1,7 @@
+mixin modal(id)
+    .modal-wrap(id= id)
+        .modal-overlay(data-modal-close= id)
+        .modal
+            button.modal-close.btn-close(data-modal-close= id)
+            .modal-content
+                block

@@ -13,4 +13,27 @@
     &:active {
         background: lighten($black, 30%);
     }
+    &-close {
+        position: relative;
+        @include square(30px);
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include square(22px);
+            background-image: url('Images/close-svgrepo-com.svg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            transform: translate(-50%, -50%);
+        }
+        &:hover {
+            opacity: 0.7;
+        }
+    }
 }

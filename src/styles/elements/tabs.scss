@@ -3,6 +3,7 @@
     &-title {
         padding: 5px 10px;
         background: #ccc;
+        border: none;
         cursor: pointer;
         &.active {
             background: $white;

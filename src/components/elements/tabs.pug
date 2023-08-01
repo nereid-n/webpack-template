@@ -3,7 +3,7 @@ mixin tabs(list)
         .tabs
             each item, index in list
                 -const active = index == 0 ? 'active' : ''
-                .tabs-title(class= active)= item.title
+                button.tabs-title(class= active)= item.title
         if block
             block
         else
