@@ -6,9 +6,10 @@
 @import 'elements/container';
 @import 'elements/buttons';
 @import 'elements/inputs';
-@import 'elements/modal';
-@import 'elements/tabs';
-@import 'elements/breadcrumb';
+//@import 'elements/modal';
+//@import 'elements/tabs';
+//@import 'elements/breadcrumb';
+//@import 'elements/accordion';
 
 body {
     margin: 0;
@@ -60,4 +61,5 @@ button {
     font-family: inherit;
     font-size: inherit;
     transition: $transition;
+    cursor: pointer;
 }

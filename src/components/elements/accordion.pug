@@ -1,0 +1,10 @@
+mixin accordion(list)
+    .accordion
+        each item in list
+            - const active = item.active ? 'active' : ''
+            .accordion-item(class= active)
+                button.accordion-title
+                    span= item.title
+                    img.accordion-arrow(src=require('Images/arrow-down.svg'))
+                .accordion-body
+                    .accordion-content= item.content
